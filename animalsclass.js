@@ -68,6 +68,7 @@ class Dog extends Mammal {
         this.Breed = breedParam
         this.Reproduction = "Live birth"
         this.ReproductionTime = "Roughly 65 days"
+        this.barked = this.bark()
     }
     bark(){
         return `${this.Name} is barking to say hello to you!`
@@ -87,19 +88,23 @@ const kennel = [
    function loopThroughNGreet(dogNames){
         let num = 1
 
-        for (let i = 0; i <= dogNames.length;i++){ 
-            for (let j = num; j < dogNames.length;j++){
-                console.log(dogNames[i].greet(dogNames[j].Name))
-                i+=1
-                num+= 1
+        for (let i = 0; i < dogNames.length;i++){ 
+            // for (let j = num; j < dogNames.length;j++){
+                if (i !== 4){
+                console.log(dogNames[i].greet(dogNames[i+1].Name))
+                // i+=1
+                // num+=1
+                } else {
+                    console.log(dogNames[i].greet(dogNames[0].Name))
                 }
             }
+            // }
             // Couldn't figure it out with if statement but this worked
-            console.log("Hello Delta, I am Alex! Lets ask our parents for a play date.")
+            // console.log("Hello Delta, I am Alex! Lets ask our parents for a play date.")
         }
    
 
     loopThroughNGreet(kennel)
-    console.log(kennel)
+    // console.log(kennel)
     // console.log(kennel[2])
 
